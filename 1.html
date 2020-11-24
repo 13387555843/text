@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      ul,li{
+           list-style: none;
+       }
+        .block{
+          border:1px solid #333;
+          margin:0 auto;
+          width: 600px;
+
+        }
+        .block>li{
+            width: 60px;
+            display: inline-block;
+            height:10px ;
+        }
+    </style>
+</head>
+<body>
+    <ul class="block" id=block>
+        <li ></li>
+        <li ></li>
+        <li ></li>
+        <li ></li>
+        <li ></li>
+        <li ></li>
+    </ul>
+</body>
+</html>
+<script>
+    var block=document.getElementById("block")
+  var lis=block.getElementsByTagName("li")
+    
+ setInterval(() => {
+     function zero(num) {
+         return num < 10 ? "0" + num : num;
+     }
+     var res = new Date();
+    
+     
+      lis[0]=res.getFullYear();
+      lis[1]=res.getMonth()+1;
+      lis[2]=res.getUTCDate();
+      lis[3]=res.getHours();
+      lis[4]=res.getMinutes();
+      lis[5]=res.getSeconds();
+      
+      lis.innerText= zero(lis[0])+"年" + zero(lis[1])+"月" + zero(lis[2])+"日" + zero(lis[3])+"时" + zero(lis[4])+"分" + zero(lis[5])+"秒"
+  }, 1000);
+  
+</script>

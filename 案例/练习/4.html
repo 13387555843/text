@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .mian {
+            height: 100px;
+            width: 100px;
+        }
+
+        .code {
+            width: 100px;
+            height: 50px;
+            border: 1px solid#333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mian" id="mian">
+
+
+    </div>
+    <button id="code">验证码</button>
+</body>
+
+</html>
+<script>
+    var mian = document.getElementById("mian");
+    var code = document.getElementById("code");
+
+    function res() {
+
+        tp = "1234567890qwertyuiopasdfghjklzxcvbnm";
+        var ppt = "";
+        for (var i = 0; i < 4; i++) {
+            var index = Math.floor(Math.random() * 35);
+            ppt = ppt + tp[index];
+        }
+        return ppt;
+    }
+
+
+    var time = setInterval(() => {
+        mian.innerText = res();
+    }, 100);
+    var time1 = setTimeout(() => {
+        clearTimeout(time1);
+        clearInterval(time);
+        time = "";
+        time1 = "";
+    }, 10000);
+    mian.innerText = res();
+    code.onclick = function () {
+        mian.innerText = res();
+    }
+    function sibling(ele) {
+        pre=ele.previousSibling;
+        while (pre&&pre.notrType!==1) {
+            pre=pre.previousSibling;
+        }
+        return pre
+    }
+</script>

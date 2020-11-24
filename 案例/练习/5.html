@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .pre{
+            margin:0 auto;
+            width: 100px;
+            height: 40px;
+            border:1px solid #333;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="pre" id="pre"></div>
+   
+</body>
+</html>
+<script>
+    var pre=document.getElementById("pre");
+    function ttp() {
+        var str="";
+var qwe="0123456789"
+   
+    for (var i = 0; i < 4; i++) {
+       index=Math.floor(Math.random()*9);
+       str+=qwe[index];
+        
+    }
+    return str
+    
+     }
+     var time=setInterval(() => {
+         pre.innerText=ttp()
+     }, 100);
+     var time1=setTimeout(() => {
+         clearInterval(time);
+         clearTimeout(time1);
+         time=null;
+         time1=null;
+     }, 10000);
+</script>

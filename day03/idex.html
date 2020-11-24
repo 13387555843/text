@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" class="box" style="color: lightcoral;">该起床了！</div>
+    <div id="box2" class="box" style="color: rgb(232, 240, 128);">该起床了！</div>
+    <div id="box3" class="box" style="color: rgb(121, 84, 209);">该起床了！</div>
+    
+</body>
+</html>
+<script>
+    // 通过id拿到这个元素
+    var obox=document.getElementById("box");
+    obox.onclick=function(){
+
+    obox2.onclick=function(){ }
+    obox3.onclick=function(){
+        // this能自动识别并拾取当前所取得元素
+        console.log(this.style.color);
+    }
+    //鼠标划上事件
+    /*box.onmouseover=function(){
+        //点击的时候要做的事情
+        alert("滑上")
+    }
+    */
+    /*
+    innerHTML和innerText的区别
+    innerHTML 可以识别标签
+    innerText 不能识别标签
+    */
+   //设置
+
+  
+}
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            margin: 0 auto;
+            text-align: center;
+            width: 300px;
+            height: 200px;
+            line-height: 200px;
+            border: 1px solid #333;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+
+</body>
+
+</html>
+<script>
+    var box = document.getElementById("box");
+    function pre() {
+        var range = "1234567890";
+        var num = "";
+        //  console.log((str,rang[str]));
+        for (let i = 0; i < 4; i++) {
+            var str = Math.round(Math.random() * 9);
+            num += range[str];
+        }
+        return num;
+    }
+    box.innerText = pre();
+    var time = setInterval(() => {
+        box.innerText = pre();
+    }, 1000);
+    var time1 = setTimeout(() => {
+        clearTimeout(time1);
+        clearInterval(time);
+        time = null;
+        time1 = null;
+    }, 5000);
+</script>

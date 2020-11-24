@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #time {
+            margin: 0 auto;
+            width: 300px;
+            height: 200px;
+            border: 1px solid #333;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="time"></div>
+</body>
+
+</html>
+<script>
+    function pre() {
+
+
+        var res = ""
+        var range = "1234567890"
+        for (var i = 0; i < 4; i++) {
+            var index = Math.floor(Math.random() * 9)
+            res += range[index]
+        }
+        return res;
+    }
+    var time = document.getElementById("time")
+    time.innerText = pre()
+    var time1 = setInterval(() => {
+        time.innerText = pre()
+    }, 100);
+    var time2 = setTimeout(() => {
+       
+        clearInterval(time1);
+        clearTimeout(time2);
+         time1 = null;
+        time2 = null;
+    }, 10000);
+</script>

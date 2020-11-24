@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 40px;
+            height: 20px;
+            margin:0 auto;
+            border:1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>
+<script>
+  function time() {
+      
+   var ttp="";
+    var pre="0123456789abcdefghjiklm";
+    for (var i = 0; i < pre.length-1; i++) {
+        
+        
+    }
+    for (var i = 0; i < 4; i++) {
+         var index = Math.round(Math.random() * 9);
+         console.log(index, ttp[index]);
+         ttp=ttp+pre[index];
+        
+    }
+     return ttp;
+    } 
+//    var box=document.getElementById("box");
+   box.innerText=time();
+       
+     var tim=  setInterval(() => {
+          box.innerText = time();
+     }, 100);
+     
+        
+  var  tim1=setTimeout(() => {
+       clearInterval(tim);
+     tim=null;
+      clearTimeout(tim1);
+      tim1=null
+   }, 10000);
+
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            
+        }
+       #block{
+           border:1px solid #333;
+           width: 300px;
+           height: 100px;
+           text-align: center;
+           line-height: 100px;
+           margin:0 auto;
+       }
+    </style>
+</head>
+<body>
+    <div id="block"></div>
+</body>
+</html>
+<script>
+    var block=document.getElementById("block");
+    var TargeTime="2020-11-24 12:00:00";
+    
+    function zero(num) {
+            return num < 10 ? "0" + num : num;
+        }
+    function time(block) {
+        var diffTime = new Date(TargeTime) - new Date();
+        if (diffTime<=0) {
+            clearInterval(timer);
+            timer=null;
+          return "时间已到";
+        }
+        
+    var hours=Math.floor(diffTime/(1000*60*60));
+    var minutes=Math.floor((diffTime-hours*1000*60*60)/(1000*60));
+    var second=Math.floor((diffTime-hours*60*60*1000-minutes*1000*60)/1000);
+return zero(hours)+"时"+zero(minutes)+"分"+zero(second)+"秒";
+ }
+block.innerText=time(block);
+var timer=setInterval(() => {
+    block.innerText = time(block);
+}, 1000);
+</script>

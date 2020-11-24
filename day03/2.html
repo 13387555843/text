@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: lightslategray;
+        }
+        .main{
+            margin:0 auto;
+            width: 400px;
+            height: 200px;
+          border:1px solid red;
+        }
+        button{
+            display: block;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+            width: 100%;
+        }
+        img{
+            display: block;
+            width: 400px;
+          
+        }
+    </style>
+</head>
+<body>
+    <div id="main" class="main">
+        <button id="btn" >隐藏</button>
+        <img id="img" src="hero-bg-4.jpg" alt="">
+        </div>
+</body>
+</html>
+<script>
+    /*
+    要做的事：点击按钮
+    如果按钮里面的文字：隐藏：
+      1.*/
+      var btn=document.getElementById("btn");
+      var img=document.getElementById("img");
+      btn.onclick=function(){
+          var value=btn.innerText
+          if (value=="隐藏"){
+              btn.innerText="显示";
+             img.style.display="none";
+
+          }else{
+              btn.innerText="隐藏";
+             img.style.display="block";
+          }
+      }
+</script>

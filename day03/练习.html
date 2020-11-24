@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        div {
+            width: 400px;
+            margin: auto;
+            display: block;
+            border: 1px solid #333;
+           
+        }
+
+        img {
+            width: 100%;
+        }
+
+        li {
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="hole">
+        <button id="btn">隐藏</button>
+        <img id="img" src="libg.png" alt="">
+        <ul id="lists">
+            <li>
+                好好学习，天天向上
+            </li>
+            <li>
+                好好学习，天天向上
+            </li>
+            <li>
+                好好学习，天天向上
+            </li>
+            <li>
+                好好学习，天天向上
+            </li>
+            <li>
+                好好学习，天天向上
+            </li>
+            <li>
+                好好学习，天天向上
+            </li>
+            <li>
+                好好学习，天天向上
+            </li>
+            <li>
+                好好学习，天天向上
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
+ <!-- <script>
+    var maue = document.getElementById("lists");
+    var btn = document.getElementById("btn");
+    var img = document.getElementById("img");
+    var lis = maue.getElementsByTagName("li")
+    for (var i = 0; i < lis.length; i++) {
+        if (i % 2 == 0) {
+            lis[i].style.backgroundColor = "green";
+
+        } else{
+            lis[i].style.backgroundColor = "blue";
+
+        }
+    lis[i].onmouseover = function(){
+        this.desk = this.style.backgroundColor;
+        this.style.backgroundColor = "pink";
+    }
+    lis[i].onmouseout = function(){
+        this.style.backgroundColor = this.desk;
+    }
+      }
+      btn.onclick =function(){
+          var vale=btn.innerText
+          if (vale=="隐藏") {
+            btn.innerText="显示";
+            img.style.display="block"}
+            else{
+                btn.innerText="隐藏";
+                img.style.display="none"
+            }
+
+          }
+          
+      
+</script>  -->
+ <!-- <script>
+    var tiele=document.getElementById("lists");
+    var lis=tiele.getElementsByTagName("li");
+    var btn=document.getElementById("btn");
+    var img=document.getElementById("img");
+    for (var i=0;i<lis.length;i++){
+        if(i%2==0){
+            lis[i].style.backgroundColor="red";
+
+        }else{
+            lis[i].style.backgroundColor="yellow";
+        }
+        lis[i].onmouseover = function () {
+            this.jump=this.style.backgroundColor;
+            this.style.backgroundColor="gray";
+
+        }
+        lis[i].onmouseout = function () {
+            this.style.backgroundColor = this.jump;
+        }
+         }
+        
+        btn.onclick=function(){
+            
+            var vale=btn.innerText;
+            if (vale=="隐藏") {
+                btn.innerText="显示";
+                img.style.display="none";
+            }
+                else{
+                    btn.innerText="隐藏";
+                    img.style.display="block";
+                }
+                
+         
+            }
+       
+
+
+    
+</script>  -->
+<script>
+    
+    
+</script>

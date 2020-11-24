@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .mian{
+            width: 200px;
+            margin:0 auto;
+        }
+        .code{
+            width: 100px;
+            height: 50px;
+            border: 1px solid#333;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mian">
+        <div class="code"></div>
+        <button>获取验证码</button>
+    </div>
+</body>
+</html>
+<script>
+    function getcode() {
+            var str = "qwertyuiopsdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
+            var resStr = "";
+            var index = Math.round(Math.random() * 61);
+            for (var i = 0; i < 4; i++) {
+                if (resStr.indexOf(str[index]) > -1) {
+                    i--;
+                    continue;
+
+                }
+                resStr += str[index];
+
+            }
+            return resStr;
+
+        }
+       code.innerText=getcode();
+       btn.onc1ick = function () {
+           code.innerText=getCode();
+       }
+</script>

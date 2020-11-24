@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pre {
+            width: 200px;
+            height: 300px;
+            border: 1px solid #333;
+            margin: auto;
+            text-align: center;
+            line-height: 300px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="pre" id="pre"></div>
+</body>
+
+</html>
+<script>
+    var ppv = "2020-11-24 23:00:00";
+    var pre = document.getElementById("pre")
+    function zero(num) {
+        return num < 10 ? "0" + num : num
+    }
+    function gft(ppv) {
+        var diffTime = new Date(ppv) - new Date();
+        if (diffTime <= 0) {
+            clearInterval(timer);
+            timer = null;
+            return "时间已到，很抱歉";
+        }
+        var hours = Math.floor (diffTime / (1000 * 60 * 60));
+        var minutes = Math.floor((diffTime - hours * 1000 * 60 * 60)/ (1000 * 60));
+
+        var seconds = Math.floor((diffTime - hours * 1000 * 60 * 60 - minutes * 60 * 1000) / 1000);
+        return zero(hours) + "时" + zero(minutes) + "分" + zero(seconds) + "秒";
+    }
+    pre.innerText = gft(ppv);
+    var timer = setInterval(() => {
+        console.log(1);
+        pre.innerText = gft(ppv);
+    }, 1000);
+
+</script>

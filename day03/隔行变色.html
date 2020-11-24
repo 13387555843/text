@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul,
+    li {
+        list-style: none;
+        text-align: center;
+
+    }
+
+    body {
+        background-color: lightslategrey;
+    }
+
+    ul {
+        width: 400px;
+
+        display: block;
+        margin: 0 auto;
+        background-color: lime;
+    }
+</style>
+
+<body>
+    <ul id="lis" class="main">
+        <li>好好学习，天天向上</li>
+        <li>好好学习，天天向上</li>
+        <li>好好学习，天天向上</li>
+        <li>好好学习，天天向上</li>
+        <li>好好学习，天天向上</li>
+        <li>好好学习，天天向上</li>
+    </ul>
+
+</body>
+
+</html>
+<script>
+    var lis = document.getElementById("lis");
+    var lists = lis.getElementsByTagName("li");
+    for (var i = 0; i < lists.length; i++) {
+        if (i % 2 == 0) {
+            lists[i].style.backgroundColor = "lightblue";
+        }
+        else {
+            lists[i].style.backgroundColor = "green";
+        }
+        lists[i].onmouseover = function () {
+            this.oldColor = this.style.backgroundColor;
+            this.style.backgroundColor = "yellow";
+
+        }
+        lists[i].onmouseout = function () {
+            this.style.backgroundColor = this.oldColor;
+        
+        }
+
+
+    }
+
+</script>
