@@ -16,6 +16,11 @@ function fn(){
     function f1(){};
 })();
 
+var n=3;
+function fn() {
+    console.log(n);
+}
+function sum() {
+    var n=6;
 
-
-
+}
