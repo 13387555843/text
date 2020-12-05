@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+
+        #main{
+            margin:0 auto;
+            width: 300px;
+        }
+      #main>li{
+          border-bottom-style: dotted;
+          border-bottom-color: #333;
+            width: 300px;
+            height: 30px;
+           line-height: 30px;
+           
+        }
+       #btn{
+           display: block;
+          margin:20px auto;
+          width: 80px;
+          height: 40px;
+       }
+
+
+    </style>
+</head>
+<body>
+    <ul id=main>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+       
+    </ul>
+    <button id="btn">倒序</button>
+</body>
+</html>
+<script>
+    
+    var main=document.getElementById("main");
+    var lis = main.getElementsByTagName("li");
+    // var btn=document.getElementById("btn");
+    var lisAry=Array.from(lis);
+    var flag=1
+ btn.onclick = function () {
+     flag*=-1
+        lisAry.sort(function (a, b) {
+                return (a.innerText - b.innerText)*flag
+            })
+     
+        for (var i = 0; i < lisAry.length; i++) {
+        main.appendChild(lisAry[i])
+        }
+           } 
+</script>

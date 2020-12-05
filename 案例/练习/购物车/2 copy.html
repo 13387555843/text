@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    
+        ul,
+        ol {
+            list-style: none;
+        }
+    
+        #main {
+            width: 479px;
+            height: 591px;
+            background: url(images/bg1.png) center center no-repeat;
+            margin:0 auto;
+            padding: 30px;
+            box-sizing: border-box;
+            position: absolute;
+        }
+        .shopContent button{
+            width: 52px;
+            height: 44px;
+            border: none;
+        }
+         .shopContent li{
+             display: flex;
+              justify-content: space-evenly;
+            align-items: center;
+            color: #fff
+         }
+        .add{
+            background: url(images/add.png)
+        }
+        .sub{
+             background: url(images/sub.png)
+        }
+        .num{
+             width: 52px;
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+
+        }
+            .shopInfo {
+            position: absolute;
+            bottom: 20px;
+            left: 30px;
+            color: #fff;
+
+        }
+
+        .shopInfo p {
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+  <div id="main">
+<ul class="shopContent">
+    <li>
+        <button class="add"></button>
+        <b class="num">0</b>
+        <button class="sub"></button>
+        <span class="info">
+            单价：<b class="itemPrice">1</b>元 小计：<span class="xjMoney">0</span>元
+
+        </span>
+    </li>
+    <li>
+        <button class="add"></button>
+        <b class="num">0</b>
+        <button class="sub"></button>
+        <span class="info">
+            单价：<b class="itemPrice">3</b>元 小计：<span class="xjMoney">0</span>元
+
+        </span>
+    </li>
+    <li>
+        <button class="add"></button>
+        <b class="num">0</b>
+        <button class="sub"></button>
+        <span class="info">
+            单价：<b class="itemPrice">5</b>元 小计：<span class="xjMoney">0</span>元
+
+        </span>
+    </li>
+    <div class="shopInfo">
+        <p>商品共<span class="totalNum">0</span>件</p>
+        <p>共花了<span class="totalMoney">0</span>元</p>
+        <p>选中的商品中最贵的商品单价是<span class="specialItemPrice">0</span>元</p>
+    
+    </div>
+
+</ul>
+  </div>
+</body>
+</html>
+<script >
+    var shopContent=document.getElementsByClassName("shopContent");
+    var lis=shopContent.getElementsByClassName("li");
+    var button=document.querySelectorAll(".button")
+    var add=lis.getElementsByClassName("add");
+    var sub=lis.getElementsByClassName("sub");
+    var num=lis.getElementsByClassName("num");
+    var info=lis.getElementsByClassName("info")
+    var itemPrice=info.getElementsByClassName("itemPrice");
+    var xjMoney=info.getElementsByClassName("xjMoney");
+  for (let i = 0; i < lis.length; i++) {
+     button[i].onclick=function(){
+         
+     }
+      
+  }
+
+    
+</script>
