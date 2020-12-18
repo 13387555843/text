@@ -19,3 +19,18 @@ var fn=obj.fn;
 fn(5);//22
 obj.fn(10);//23
 console.log(num,obj.num);//(65,30)
+
+
+
+function A() {
+    this.a = "a";
+    this.x = 100;
+}
+function B() {
+    //实例 b this
+    A.call(this);
+    this.b = 'b';
+    this.y = 200;
+}
+var b = new B();
+console.log(b);

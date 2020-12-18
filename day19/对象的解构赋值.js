@@ -21,11 +21,9 @@ console.log(name, age);
 let { age=100, name } = { name: "li", age: 10 }
 console.log(name, age);
 //可以其别名,用冒号
-let { age:a, name } = { name: "li", age: 10 }
-console.log(name, age);
 
 
-
+ 
 function fn() {
     console.log(1);
 }
@@ -51,3 +49,12 @@ function fn(age:a) {
     console.log(a);
 }
 fn({name:"li",age:10})
+
+
+
+
+var obj={name:"zhufeng",age:10}
+var {name,name,age2}=obj//把属性值转成变量；根据属性名
+var {n:name}=obj;//var name=boj.n
+var { name: n } = obj//var n=obj.name(换名操作)
+console.log(n);

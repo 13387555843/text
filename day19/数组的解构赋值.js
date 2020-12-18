@@ -27,5 +27,11 @@ var [a,b,c=10]=[1,2,null];
 console.log(c);
 
 //当第三个数值为undefined时，调用c=10
-var [a, b, c = 10] = [1, 2, undefined];
+var [a, b, c = 10] = [1, 2, undefined];//里面c=10 为默认赋值
 console.log(c);
+
+var x=1,y=2;//x=2,y=1;不建筑第三方变量;
+//[x+y]=[y,x]es6的位置互换
+y=x+y;
+  y=x-y;
+  x=x-y//es5的方法

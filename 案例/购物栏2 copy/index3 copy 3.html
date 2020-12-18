@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="css/iconfont.css">
+    <!-- 自己写的css -->
+    <link rel="stylesheet" href="css/index3.css">
+
+</head>
+
+<body>
+    <div id="main" class="main">
+        <div id="topBar" class="topBar">
+            <span>排序</span>
+            <a class="sortBtn" href="">
+                <span>上架时间</span>
+                <div class="arrows">
+                    <b class="iconfont icon-shang arrowUp"></b>
+                    <b class="iconfont icon-xiajiantou arrowDown"></b>
+                </div>
+            </a>
+            <a class="sortBtn" href="">
+                <span>热度</span>
+                <div class="arrows">
+                    <b class="iconfont icon-shang arrowUp"></b>
+                    <b class="iconfont icon-xiajiantou arrowDown"></b>
+                </div>
+            </a>
+            <a class="sortBtn" href="">
+                <span>价格</span>
+                <div class="arrows">
+                    <b class="iconfont icon-shang arrowUp"></b>
+                    <b class="iconfont icon-xiajiantou arrowDown"></b>
+                </div>
+            </a>
+        </div>
+        <!-- 图片列表 -->
+        <ul class="lists">
+            <li>
+                <img src="img/1.jpg" alt="">
+                <p class="title">HUAWEI全网通版（亮黑色）</p>
+                <p>2017-03-15</p>
+                <p class="numInfo">
+                    <span>999元</span>
+                    <span>99</span>
+                </p>
+            </li>
+            <li>
+                <img src="img/1.jpg" alt="">
+                <p class="title">HUAWEI全网通版（亮黑色）</p>
+                <p>2017-03-15</p>
+                <p class="numInfo">
+                    <span>999元</span>
+                    <span>99</span>
+                </p>
+            </li>
+            <li>
+                <img src="img/1.jpg" alt="">
+                <p class="title">HUAWEI全网通版（亮黑色）</p>
+                <p>2017-03-15</p>
+                <p class="numInfo">
+                    <span>999元</span>
+                    <span>99</span>
+                </p>
+            </li>
+            <li>
+                <img src="img/1.jpg" alt="">
+                <p class="title">HUAWEI全网通版（亮黑色）</p>
+                <p>2017-03-15</p>
+                <p class="numInfo">
+                    <span>999元</span>
+                    <span>99</span>
+                </p>
+            </li>
+            <li>
+                <img src="img/1.jpg" alt="">
+                <p class="title">HUAWEI全网通版（亮黑色）</p>
+                <p>2017-03-15</p>
+                <p class="numInfo">
+                    <span>999元</span>
+                    <span>99</span>
+                </p>
+            </li>
+            <li>
+                <img src="img/1.jpg" alt="">
+                <p class="title">HUAWEI全网通版（亮黑色）</p>
+                <p>2017-03-15</p>
+                <p class="numInfo">
+                    <span>999元</span>
+                    <span>99</span>
+                </p>
+            </li>
+            <li>
+                <img src="img/1.jpg" alt="">
+                <p class="title">HUAWEI全网通版（亮黑色）</p>
+                <p>2017-03-15</p>
+                <p class="numInfo">
+                    <span>999元</span>
+                    <span>99</span>
+                </p>
+            </li>
+            <li>
+                <img src="img/1.jpg" alt="">
+                <p class="title">HUAWEI全网通版（亮黑色）</p>
+                <p>2017-03-15</p>
+                <p class="numInfo">
+                    <span>999元</span>
+                    <span>99</span>
+                </p>
+            </li>
+            <li>
+                <img src="img/1.jpg" alt="">
+                <p class="title">HUAWEI全网通版（亮黑色）</p>
+                <p>2017-03-15</p>
+                <p class="numInfo">
+                    <span>999元</span>
+                    <span>99</span>
+                </p>
+            </li>
+            <li>
+                <img src="img/1.jpg" alt="">
+                <p class="title">HUAWEI全网通版（亮黑色）</p>
+                <p>2017-03-15</p>
+                <p class="numInfo">
+                    <span>999元</span>
+                    <span>99</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
+<script>
+   // 1创建ajax 实例
+    var xhr = new XMLHttpRequest();
+    // 打开请求的地址
+    xhr.open("get","data/data.json");
+    xhr.open("get", "data/data.json");
+    xhr.onreadystatechange = function () {
+        //xhr.status 符合以2开头的三位数
+        if (xhr.readyState == 4 && /^2\d{2}/.test(xhr.status)) {
+            //获取到了数据
+            //把JSON转化为了格式化对象
+           data=JSON.parse(xhr.responseText);
+        }
+    }
+    // 发送请求
+    xhr.send();
+    console.log("---"+data);
+</script>

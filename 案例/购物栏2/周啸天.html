@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="css/iconfont.css">
+    <!-- 自己写的css -->
+    <link rel="stylesheet" href="css/index3.css">
+
+</head>
+
+<body>
+    <div id="main" class="main">
+        <div id="topBar" class="topBar">
+            <span>排序</span>
+            <a class="sortBtn" href="javascript:;" sortFlag="time">
+                <span>上架时间</span>
+                <div class="arrows">
+                    <b class="iconfont icon-shang arrowUp"></b>
+                    <b class="iconfont icon-xiajiantou arrowDown"></b>
+                </div>
+            </a>
+            <a class="sortBtn" href="javascript:;" sortFlag="hot">
+                <span>热度</span>
+                <div class="arrows">
+                    <b class="iconfont icon-shang arrowUp"></b>
+                    <b class="iconfont icon-xiajiantou arrowDown"></b>
+                </div>
+            </a>
+            <a class="sortBtn" href="javascript:;" sortFlag="price">
+                <span>价格</span>
+                <div class="arrows">
+                    <b class="iconfont icon-shang arrowUp"></b>
+                    <b class="iconfont icon-xiajiantou arrowDown"></b>
+                </div>
+            </a>
+        </div>
+        <!-- 图片列表 -->
+        <ul class="lists" id="lists">
+        </ul>
+    </div>
+</body>
+
+</html>
+<script>
+    var data = [];
+    var str = ``;//用来储存拼接的结构
+    var lists = document.getElementById("lists")
+    var links = document.querySelectorAll("#main .sortBtn");
+    var lis;
+
+    // 1创建一个ajax 实例(用来获取数据的一种方式)
+    var xhr = new XMLHttpRequest();
+
+    // 打开请求的地址
+    xhr.open("get", "data/data.json");//告诉这个实力以一种什么样的方式（get）获取去那里（路径）获取数据
+    xhr.onreadystatechange = function () {
+        //xhr.status 符合以2开头的三位数
+        if (xhr.readyState == 4 && /^2\d{2}/.test(xhr.status)) {
+            //xhr.redayState==4&&xhr.staus==200
+            //能够进入到这个条件中，证明我们已经获取了数据
+            //获取到了数据
+            //把JSON字符串转成对象
+           
+            data = JSON.parse(xhr.responseText);//xhr.response //把JSON字符串转成对象
+            //绑定数据
+            bindHTML(data);
+            render(data);//当获取到数据之后，再去渲染数据
+        }
+    }
+    // 发送请求
+    xhr.send();
+    //渲染数据
+    function render(data=[]){
+let str=``
+data.forEach(item => {
+    str+=`<li>
+                <img src="${item.img}" alt="">
+                <p class="title">${item.title}</p>
+                <p>2017-03-15</p>
+                <p class="numInfo">
+                    <span>${item.price.toFixed(2)}</span>
+                    <span>99</span>
+                </p>
+            </li>`
+});
+    }
+    //这里的toFixed为保留俩位小数
+    let ul=doument.querySelector(".phone_list_box")
+      ul.innerHTML=str;
+      //点击排序，点击的时候，把数据按照指定的参数进行排序，然后重新render
+      let timeBtn=document.getElementsByName("sort_btn")[1];
+      timeBtn.flag=1;
+      timeBtn.onclick=function(){
+          console.log(data);
+          this.flag*=-1;
+          let temp=data.sort(function(a,b){
+return (a.time-b.time)*this.flag
+          })
+      
+
+     
+</script>
+
+
+
